@@ -1,0 +1,44 @@
+.main_page 
+{
+    text-align: center;
+    padding: 50px 0;
+}
+
+.main_text {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #aabbb7;
+    font-size: 18px;
+}
+
+.main_choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+}
+
+.main_choice 
+{
+    flex: 1;
+    min-width: 220px;
+    padding: 25px;
+    border: 1px solid #354448;
+    border-radius: 10px;
+    background-color: #182428;
+    color: #ccd9d6;
+    text-decoration: none;
+}
+
+.main_choice h2 {
+    font-size: 21px;
+}
+
+.main_choice p {
+    color: #aabbb7;
+}
+
+.main_choice:hover {
+    border-color: #7bb9ad;
+    background-color: #202f33;
+}
