@@ -83,3 +83,47 @@ h1 {
     font-size: 36px;
     margin-bottom: 20px;
 }
+
+
+.menu_button {
+    display: none;
+    background: none;
+    border: 1px solid #354448;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu_button span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px 0;
+    background-color: #CCD9D6;
+}
+
+@media (max-width: 820px) {
+    .header_bar {
+        position: relative;
+    }
+
+    .menu_button {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        text-align:center;
+    }
+
+    nav.otwarte {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px 0;
+    }
+}
