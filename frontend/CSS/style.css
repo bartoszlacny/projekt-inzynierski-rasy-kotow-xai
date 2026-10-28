@@ -1,6 +1,6 @@
 * { 
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
@@ -26,12 +26,12 @@ footer {
     text-align: center;
 }
 
-
 footer p {
     margin-top: 5px;
     margin-bottom: 5px; 
     text-align: center;
 }
+
 
 .header_bar {
   max-width: 1280px;
