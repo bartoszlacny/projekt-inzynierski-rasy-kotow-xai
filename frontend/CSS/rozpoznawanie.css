@@ -1,0 +1,70 @@
+
+.breed_recognition{
+    text-align: center;
+    padding: 0 0 25px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.upload_box {
+    background-color: #141e22;
+    border: 1px solid #354448;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.choose_photo_button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2e373a;
+    background-color: #CCD9D6;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.choose_photo_button:hover {
+    filter: brightness(0.75);
+}
+
+
+#preview {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 5px;
+}
+
+#filename_text {
+    margin: 0;
+    max-width: 100%;
+    text-align: center;
+}
+
+.recognize_button {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: #2e373a;
+    background-color: #CCD9D6;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.recognize_button:enabled:hover {
+    filter: brightness(0.75);
+}
+
+.recognize_button:disabled {
+    background-color: #2e373a;
+    color: #CCD9D6;
+    font-weight: bold;
+    cursor: not-allowed;
+}
