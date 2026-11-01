@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rozpoznawanie ze zdjęcia</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/rozpoznawanie.css">
 </head>
 <body>
 
@@ -29,8 +30,19 @@
 
 
 <main>
+  <section class="breed_recognition">
   <h1>Rozpoznawanie ze zdjęcia</h1>
-  <div>Tu będzie można wgrać zdjęcie kota i zobaczyć wynik.</div>
+  <p>Wgraj zdjęcie kota i kliknij „Rozpoznaj”, aby zobaczyć wynik.</p>
+  </section>
+ 
+  <section class="upload_box">
+    <label for="file" class="choose_photo_button">Wybierz zdjęcie</label>
+    <input type="file" id="file" accept="image/*" class="hidden">
+    <p id="filename_text">Nie wybrano pliku</p>
+    <img id="preview" class="hidden" alt="Podgląd wgranego zdjęcia">
+    <button class="recognize_button" id="recognize_button" disabled>Rozpoznaj</button> 
+  </section>
+
 </main>
 
 <footer>
@@ -41,5 +53,6 @@
 
 
 <script src="js/menu.js"></script>
+<script src="js/rozpoznawanie.js"></script>
 </body>
 </html>
