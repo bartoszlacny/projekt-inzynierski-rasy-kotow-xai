@@ -43,6 +43,33 @@
     <button class="recognize_button" id="recognize_button" disabled>Rozpoznaj</button> 
   </section>
 
+  <p id="error" class="hidden"></p>
+
+  <section id="result" class="hidden">
+    <h2>Wynik</h2>
+    <div id="breeds_list"></div>
+
+    <h2>Dlaczego ten wynik?</h2>
+
+    <div class="xai_buttons">
+      <button class="xai_button active" id="gradcam_button">Grad-CAM</button>
+      <button class="xai_button" id="lime_button">LIME</button>
+    </div>
+    <p id="xai_text"></p>
+
+    <div class="result_images">
+      <div>
+        <img id="img_orginal" alt="Oryginalne zdjęcie">
+        <p>Oryginał</p>
+      </div>
+      <div>
+        <img id="img_xai" alt="Wyjaśnienie decyzji modelu">
+        <p id="xai_title">Grad-CAM</p>
+      </div>
+    </div>
+    <button class="recognize_button" id="again_button">Wgraj inne zdjęcie</button>
+  </section>
+
 </main>
 
 <footer>
