@@ -32,12 +32,12 @@
 <main>
   <section class="breed_recognition">
   <h1>Rozpoznawanie ze zdjęcia</h1>
-  <p>Wgraj zdjęcie kota i kliknij „Rozpoznaj”, aby zobaczyć wynik.</p>
+  <p>Wgraj zdjęcie kota (JPG, PNG, WEBP lub BMP, max 10 MB) i kliknij „Rozpoznaj”, aby zobaczyć wynik.</p>
   </section>
  
   <section class="upload_box">
     <label for="file" class="choose_photo_button">Wybierz zdjęcie</label>
-    <input type="file" id="file" accept="image/*" class="hidden">
+    <input type="file" id="file" accept=".jpg, .jpeg, .png, .webp, .bmp" class="hidden">
     <p id="filename_text">Nie wybrano pliku</p>
     <img id="preview" class="hidden" alt="Podgląd wgranego zdjęcia">
     <button class="recognize_button" id="recognize_button" disabled>Rozpoznaj</button> 

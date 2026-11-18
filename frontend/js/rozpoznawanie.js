@@ -15,6 +15,26 @@ const xai_descriptions = {
     lime: "Zaznaczone obszary to fragmenty zdjęcia, które najbardziej przemawiały za wskazaną rasą."
 };
 
+
+
+function send_to_backend(image) {
+    const form_data = new FormData();
+    form_data.append("image", image);
+
+    return fetch("/predict", {
+        method: "POST",
+        body: form_data
+    }).then(function (response) {
+        if (!response.ok) {
+            return response.json().then(function (error) {
+                throw new Error(error.detail || "Błąd serwera");
+            });
+        }
+        return response.json();
+    });
+}
+
+
 file_input.addEventListener("change", function () {
     const selected_image = file_input.files[0];
     if (!selected_image) return;
@@ -26,29 +46,13 @@ file_input.addEventListener("change", function () {
 });
 
 
-function fake_backend(image) {
-    return new Promise(function (resolve) {
-        setTimeout(function () {
-            resolve({
-                top3: [
-                    { breed_result: "Maine Coon", probability: 0.62 },
-                    { breed_result: "Norwegian Forest Cat", probability: 0.21 },
-                    { breed_result: "Ragdoll", probability: 0.09 }
-                ],
-                gradcam: preview.src,
-                lime: preview.src
-            });
-        }, 1000);
-    });
-}
-
 
 recognize_button.addEventListener("click", function () {
     recognize_button.disabled = true;
     recognize_button.textContent = "Rozpoznaję...";
     error_text.classList.add("hidden");
 
-    fake_backend(file_input.files[0])
+    send_to_backend(file_input.files[0])
     
         .then(function (data) {
             show_result(data);
