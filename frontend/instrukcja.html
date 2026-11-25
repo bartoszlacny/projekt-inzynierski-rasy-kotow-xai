@@ -46,19 +46,47 @@
     <p>
       Przejdź do zakładki "<a href="rozpoznawanie.html">Rozpoznawanie ze zdjęcia</a>". Wybierz zdjęcie z urządzenia, a następnie uruchom proces rozpoznawania.
     </p>
+    <p>
+    Aby uzyskać jak najlepsze wyniki rozpoznawania, zaleca się, aby zdjęcie:
+    </p>
+
+    <ul>
+        <li>przedstawiało jednego kota,</li>
+        <li>ukazywało kota w całości lub przynajmniej większą część jego sylwetki,</li>
+        <li>przedstawiało dorosłego osobnika,</li>
+        <li>było wyraźne i odpowiednio oświetlone,</li>
+        <li>nie zawierało przesłoniętych lub rozmazanych fragmentów sylwetki kota,</li>
+        <li>przedstawiało kota z bliska, tak aby zajmował znaczną część zdjęcia.</li>
+    </ul>
   </section>
 
     <section class="step">
-    <h2>3. Odczytanie wyników</h2>
+    <h2>3. Weryfikacja zdjęcia przed rozpoznawaniem</h2>
+    <p>
+    Przed przekazaniem zdjęcia do modelu rozpoznającego rasę system sprawdza, czy przedstawia ono kota oraz czy jego jakość pozwala na przeprowadzenie analizy. Jeśli zdjęcie nie spełnia tych warunków, proces rozpoznawania zostaje przerwany, a użytkownik otrzymuje odpowiedni komunikat.
+    </p>
+
+  </section>
+
+    <section class="step">
+    <h2>4. Odczytanie wyników</h2>
     <p>
       Po zakończeniu analizy aplikacja wyświetli trzy najbardziej prawdopodobne rasy kota oraz prawdopodobieństwo przynależności do poszczególnych ras.
     </p>
     </section>
 
     <section class="step">
-    <h2>4. Interpretacja mapy Grad-CAM</h2>
+    <h2>5. Interpretacja mapy Grad-CAM</h2>
     <p>
       Mapa Grad-CAM przedstawia obszary zdjęcia, które miały największy wpływ na przewidywanie modelu. Dzięki temu można lepiej zrozumieć, na jakie fragmenty obrazu zwrócił uwagę system podczas rozpoznawania.
+    </p>
+
+    </section>
+
+    <section class="step">
+    <h2>6. Interpretacja wyjaśnienia LIME</h2>
+    <p>
+      Wyjaśnienie LIME wskazuje cechy obrazu, które miały największy wpływ na przewidywanie modelu. Dzięki temu można lepiej zrozumieć, które fragmenty zdjęcia przemawiały za rozpoznaniem danej rasy kota.
     </p>
 
     </section>

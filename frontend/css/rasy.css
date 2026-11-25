@@ -47,10 +47,6 @@
     display: block;
 }
 
-.breed img.up {
-    object-position: center 0%;
-}
-
 .breed_desc {
     padding: 20px;
 }

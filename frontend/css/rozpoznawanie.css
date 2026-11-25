@@ -68,6 +68,7 @@
 #error {
     color: #e07a7a;
     text-align: center;
+    white-space: pre-line;
 }
 
 #result {
