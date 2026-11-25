@@ -5,7 +5,9 @@ from pathlib import Path
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.staticfiles import StaticFiles
 from PIL import Image, UnidentifiedImageError
-from backend import model_service
+from .model_service import is_cat, predict as predict_breed
+from .xai.gradcam import gradcam
+from .xai.lime_explainer import lime
 
 MAX_SIZE_BYTES = 10 * 1024 * 1024
 MAX_IMAGE_PIXELS = 25_000_000
@@ -60,10 +62,16 @@ def predict(image: UploadFile = File(...)):
     finally:
         image.file.close()
 
+    if not is_cat(pil_image):
+        raise HTTPException(
+            status_code=422,
+            detail="Zdjęcie jest niewystarczająco wyraźne lub nie znajduje się na nim kot. \nZobacz jak powinno wyglądać zdjęcie na podstronie Instrukcja obsługi."
+            )
+
     try:
-        top3 = model_service.predict(pil_image)
-        gradcam_image = model_service.gradcam(pil_image)
-        lime_image = model_service.lime(pil_image)
+        top3 = predict_breed(pil_image)
+        gradcam_image = gradcam(pil_image)
+        lime_image = lime(pil_image)
 
     except Exception:
         logger.exception("Błąd podczas analizy obrazu")
